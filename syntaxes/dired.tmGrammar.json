@@ -1,0 +1,39 @@
+{
+  "scopeName": "source.dired",
+  "patterns": [
+    {
+      "match": "^Directory of .+$",
+      "name": "string"
+    },
+    {
+      "match": "^(?:.{24})([ ,0-9]{16})(?:.{37})(.+)$",
+      "captures": {
+        "1": {
+          "name": "string"
+        },
+        "2": {
+          "name": "variable"
+        }
+      }
+    },
+    {
+      "match": "^(?:.{26})(<DIR>)(?:.{46})(.+)$",
+      "captures": {
+        "1": {
+          "name": "keyword"
+        },
+        "2": {
+          "name": "variable"
+        }
+      }
+    },
+    {
+      "match": "^(?:.{77})(.+)$",
+      "captures": {
+        "1": {
+          "name": "variable"
+        }
+      }
+    }
+  ]
+}

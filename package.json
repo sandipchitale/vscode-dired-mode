@@ -1,0 +1,162 @@
+{
+  "name": "vscode-dired-mode",
+  "displayName": "VSCode dired mode",
+  "description": "Emacs like dired mode for VSCode",
+  "version": "0.0.1",
+  "publisher": "Sandip Chitale",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dired"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dired",
+        "scopeName": "source.dired",
+        "path": "./syntaxes/dired.tmGrammar.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vscode-dired",
+        "title": "Dired",
+        "enablement": "resourceScheme != 'dired'"
+      },
+      {
+        "command": "vscode-dired.parent",
+        "title": "Dired parent"
+      },
+      {
+        "command": "vscode-dired.dired",
+        "title": "Dired directory"
+      },
+      {
+        "command": "vscode-dired.mark",
+        "title": "Dired mark line"
+      },
+      {
+        "command": "vscode-dired.mark-all",
+        "title": "Dired mark all lines"
+      },
+      {
+        "command": "vscode-dired.unmark",
+        "title": "Dired unmark line"
+      },
+      {
+        "command": "vscode-dired.unmark-all",
+        "title": "Dired unmark all lines"
+      },
+      {
+        "command": "vscode-dired.toggle-mark",
+        "title": "Dired toggle mark line"
+      },
+      {
+        "command": "vscode-dired.toggle-mark-all",
+        "title": "Dired toggle mark line"
+      },
+      {
+        "command": "vscode-dired.previous",
+        "title": "Dired previous line"
+      },
+      {
+        "command": "vscode-dired.next",
+        "title": "Dired next line"
+      },
+      {
+        "command": "vscode-dired.refresh",
+        "title": "Dired refresh"
+      },
+      {
+        "command": "vscode-dired.quit",
+        "title": "Quit Dired"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "vscode-dired.parent",
+        "key": "shift+6",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.dired",
+        "key": "v",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.mark",
+        "key": "m",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.mark-all",
+        "key": "shift+m",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.unmark",
+        "key": "u",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.unmark-all",
+        "key": "shift+u",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.toggle-mark",
+        "key": "t",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.toggle-mark-all",
+        "key": "shift+t",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.previous",
+        "key": "p",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.next",
+        "key": "n",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.refresh",
+        "key": "r",
+        "when": "vscode-dired"
+      },
+      {
+        "command": "vscode-dired.quit",
+        "key": "q",
+        "when": "vscode-dired"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@types/vscode": "^1.32.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eslint": "^7.1.0",
+    "typescript": "^4.0.2"
+  }
+}
